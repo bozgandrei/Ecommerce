@@ -36,7 +36,7 @@
     </nav>
 
     <div class="container">
-        <div class="row"><a href='login'>
+        <div class="row"><a href='#'>
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading">Echipament de joc</div>
@@ -88,11 +88,8 @@
     </div><br><br>
 
     <footer class="container-fluid text-center">
-        <p>FootBike Copyright</p>
-        <form class="form-inline">Get deals:
-            <input type="email" class="form-control" size="50" placeholder="Email Address">
-            <button type="button" class="btn btn-danger">Sign Up</button>
-        </form>
+        <p>TehInt.Sports Copyright</p>
+
     </footer>
 
 @stop
