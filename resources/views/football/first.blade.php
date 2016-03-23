@@ -18,19 +18,18 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Logo</a>
+                <a class="navbar-brand" href="#">Fotbal</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">Deals</a></li>
-                    <li><a href="#">Stores</a></li>
+                    <li class="active"><a href="#">Acasa</a></li>
+                    <li><a href="#">Produse</a></li>
+                    <li><a href="#">Oferte</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span>Contul tau</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Cos</a></li>
                 </ul>
             </div>
         </div>
@@ -89,7 +88,7 @@
     </div><br><br>
 
     <footer class="container-fluid text-center">
-        <p>Online Store Copyright</p>
+        <p>FootBike Copyright</p>
         <form class="form-inline">Get deals:
             <input type="email" class="form-control" size="50" placeholder="Email Address">
             <button type="button" class="btn btn-danger">Sign Up</button>
