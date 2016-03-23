@@ -28,7 +28,7 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href='register'><span class="glyphicon glyphicon-user"></span>Contul tau</a></li>
+                    <li><a href='login'><span class="glyphicon glyphicon-user"></span>Contul tau</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Cos</a></li>
                 </ul>
             </div>
