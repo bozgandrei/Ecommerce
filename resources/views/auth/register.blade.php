@@ -4,7 +4,7 @@
 
 
 @section('content')
-{{--<form method="post" action="{{URL::to('newuser')}}">--}}
+<form method="post" action="{{URL::to('newuser')}}">
 <div class="container">
     {!! csrf_field() !!}
 
@@ -43,5 +43,5 @@
         <button href="home" type="submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span>Adauga</button>
     </div>
     </div>
-{{--</form>--}}
+</form>
 @stop
