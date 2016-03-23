@@ -7,7 +7,7 @@
 {{--<form method="post" action="{{URL::to('newuser')}}">--}}
 <div class="container">
     {!! csrf_field() !!}
-    <button href='football' type="submit" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-info"></span>Acasa</button>
+
     <div class="j" >
 
         <div class="input-group input-group-lg">
@@ -33,6 +33,11 @@
         <div class="input-group input-group-lg">
             <span class="input-group-addon" id="password"><span class="label label-primary" >Parola</span></span>
             <input type="password" class="form-control" name="password" placeholder="Parola" aria-describedby="Password">
+        </div></div>
+    <div class="j6">
+        <div class="input-group input-group-lg">
+            <span class="input-group-addon" id="password"><span class="label label-primary" >Adresa</span></span>
+            <input type="adress" class="form-control" name="adress" placeholder="Adresa" aria-describedby="Adresa">
         </div></div>
     <div class="j1" >
         <button href="home" type="submit" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus"></span>Adauga</button>
