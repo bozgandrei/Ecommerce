@@ -7,6 +7,7 @@
 {{--<form method="post" action="{{URL::to('newuser')}}">--}}
 <div class="container">
     {!! csrf_field() !!}
+    <button href='football' type="submit" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-info"></span>Acasa</button>
     <div class="j" >
 
         <div class="input-group input-group-lg">
