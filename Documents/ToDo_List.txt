@@ -1,8 +1,8 @@
 To Do List :
 
-**21.03.2016**
+**24.03.2016**
 
-- "hallelujah, hallelujah!!!!!" IT WORKS !!! Dupa lungi chinuri, si incercari....si setare manuala a unui SSH
-- create/migrare baza de date;
-- after clone from git si rulare -> error line 17 in bootstrap\autoload
-- structura pagina
+- tentativa de logo - bifat
+- poze produse bicicleta
+- nume....
+- favicon
