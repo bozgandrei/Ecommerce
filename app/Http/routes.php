@@ -28,4 +28,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/register', function (){
         return view('auth.register');
     });
+    Route::auth();
+
+    Route::get('/home', 'HomeController@index');
 });
+
+
