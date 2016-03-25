@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{URL::asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{URL::asset('css/style.css')}}">
+    <link rel="shortcut icon" href="http://localhost/Ecommerce/resources/img/Logo.bmp">
     <script type="text/javascript" src="{{URL::asset('/js/jquery-1.12.0.min.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('js/bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{URL::asset('/js/app.js')}}"></script>
