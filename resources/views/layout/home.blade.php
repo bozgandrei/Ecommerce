@@ -68,7 +68,7 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 <div class="container text-center">
-    <img src="http://localhost/Ecommerce/resources/img/Logo.bmp" alt="New York" width="400" height="200">
+    <img src= "{{ asset('/img/Logo.bmp') }}" alt="New York" width="300" height="300">
 <h1> TehInt.Sports </h1>
     <h3>We Love Sports!</h3>
         <h4>Choose Wanted Products.</h4>
