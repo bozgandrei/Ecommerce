@@ -83,7 +83,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <a href='football'>  <img src="http://localhost/Ecommerce/resources/img/fotball.jpg" alt="New York" width="1200" height="700">
+            <a href='football'>  <img src="{{ asset('/img/fotball.jpg') }}" alt="New York" width="1200" height="700">
             <div class="carousel-caption">
                 <h3>Football Products</h3>
                 <p>We love football !</p>
@@ -91,7 +91,7 @@
         </div>
 
         <div class="item">
-            <a href='cyclism'> <img src="http://localhost/Ecommerce/resources/img/ciclism.jpg" alt="Chicago" width="1200" height="700">
+            <a href='cyclism'> <img src="{{ asset('/img/ciclism.jpg') }}" alt="Chicago" width="1200" height="700">
             <div class="carousel-caption">
                 <h3>Cyclism Products</h3>
                 <p>We love cyclism !</p>
