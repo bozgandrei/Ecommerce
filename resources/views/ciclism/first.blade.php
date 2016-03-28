@@ -1,13 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="jumbotron">
+    <head>
+        <title>Ciclism</title>
+    </head>
+
         <div class="container text-center">
+            <div class="jumbotron">
             <h1>Online Store</h1>
             <p>Mission, Vission & Values</p>
         </div>
     </div>
-
+<!--
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -33,28 +37,28 @@
             </div>
         </div>
     </nav>
-
+-->
     <div class="container">
         <div class="row">
             <div class="col-sm-4">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                    <div class="panel-body"><img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                    <div class="panel-heading">Road Bike</div>
+                    <div class="panel-body"><img src="{{ asset('/img/ciclism/cursiera.jpg') }}" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">-20%</div>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-danger">
-                    <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                    <div class="panel-body"><img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                    <div class="panel-heading">MTB</div>
+                    <div class="panel-body"><img src="{{ asset('/img/ciclism/mtb.jpg') }}" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">-20%</div>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-success">
-                    <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                    <div class="panel-body"><img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                    <div class="panel-heading">Parts</div>
+                    <div class="panel-body"><img src="{{ asset('/img/ciclism/shimano.jpg') }}" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">-40%</div>
                 </div>
             </div>
         </div>
@@ -64,23 +68,23 @@
         <div class="row">
             <div class="col-sm-4">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                    <div class="panel-body"><img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                    <div class="panel-heading">Wheels</div>
+                    <div class="panel-body"><img src="{{ asset('/img/ciclism/roti.jpg') }}"" class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>
+                    <div class="panel-footer">-10%</div>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                    <div class="panel-body"><img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                    <div class="panel-heading">Head Gear</div>
+                    <div class="panel-body"><img src="{{ asset('/img/ciclism/costum.jpg') }}" class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>
+                    <div class="panel-footer">-50%</div>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                    <div class="panel-body"><img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+                    <div class="panel-heading">Bottles</div>
+                    <div class="panel-body"><img src="{{ asset('/img/ciclism/pantofi.jpg') }}" class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>
+                    <div class="panel-footer">-50 Ron</div>
                 </div>
             </div>
         </div>
