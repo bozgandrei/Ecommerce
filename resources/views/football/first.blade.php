@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+    <head>
+        <title>Football</title>
+    </head>
     <br>
     <br>
     <div class="container">
@@ -12,6 +15,7 @@
             <li data-target="#myCarousel" data-slide-to="3"></li>
             <li data-target="#myCarousel" data-slide-to="4"></li>
             <li data-target="#myCarousel" data-slide-to="5"></li>
+            <li data-target="#myCarousel" data-slide-to="6"></li>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -46,7 +50,14 @@
                     </div></a>
             </div>
             <div class="item">
-                <a href='football'>  <img src="{{ asset('/img/football/slider/france.jpeg') }}" alt="New York" width="1200" height="700" >
+                <a href='football'>  <img src="{{ asset('/img/football/slider/france.jpg') }}" alt="New York" width="1200" height="700" >
+                    <div class="carousel-caption">
+                        <h3>Football Products</h3>
+                        <p>We love football !</p>
+                    </div></a>
+            </div>
+            <div class="item">
+                <a href='football'>  <img src="{{ asset('/img/football/slider/italy.jpg') }}" alt="New York" width="1200" height="700" >
                     <div class="carousel-caption">
                         <h3>Football Products</h3>
                         <p>We love football !</p>
@@ -112,7 +123,7 @@
                         <div class="panel-body"><img
                                     src="{{ asset('/img/football/echipament.jpg') }}"
                                     class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>
-                        <div class="panel-footer">Shirts, aprons, leggings...</div>
+                        <div class="panel-footer">-24%</div>
                     </div>
                 </div>
             </a>
@@ -122,7 +133,7 @@
                     <div class="panel-body"><img src="{{ asset('/img/football/antrenament.jpg') }}"
                                                  class="img-responsive" style="width:100%" alt="Image" width="50"
                                                  height="70"></div>
-                    <div class="panel-footer">Trainings, baselayer,shirts and blouses...</div>
+                    <div class="panel-footer">-30%</div>
                 </div>
             </div>
             <div class="col-sm-4">
@@ -131,7 +142,7 @@
                     <div class="panel-body"><img src="{{ asset('/img/football/prezentare.jpg') }}"
                                                  class="img-responsive" style="width:100%" alt="Image" width="50"
                                                  height="70"></div>
-                    <div class="panel-footer">Coats and jackets, trainings, shirts...</div>
+                    <div class="panel-footer">-10%</div>
                 </div>
             </div>
         </div>
@@ -145,16 +156,16 @@
                     <div class="panel-body"><img src="{{ asset('/img/football/arbitru.jpg') }}"
                                                  class="img-responsive" style="width:100%" alt="Image" width="50"
                                                  height="70"></div>
-                    <div class="panel-footer">Best deals.</div>
+                    <div class="panel-footer">-15%</div>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Accessories and bals</div>
+                    <div class="panel-heading">Accessories and balls</div>
                     <div class="panel-body"><img src="{{ asset('/img/football/mingi.jpg') }}"
                                                  class="img-responsive" style="width:100%" alt="Image" width="50"
                                                  height="70"></div>
-                    <div class="panel-footer">Bals, bags, protections...</div>
+                    <div class="panel-footer">-20%</div>
                 </div>
             </div>
             <div class="col-sm-4">
@@ -163,7 +174,7 @@
                     <div class="panel-body"><img src="{{ asset('/img/football/lifestyle.jpg') }}"
                                                  class="img-responsive" style="width:100%" alt="Image" width="50"
                                                  height="70" s></div>
-                    <div class="panel-footer">Shirts and blouses,shorts and trousers...</div>
+                    <div class="panel-footer">-5%</div>
                 </div>
             </div>
         </div>
@@ -172,11 +183,10 @@
     <footer class="container-fluid text-center">
         <form class="form-inline">Get deals:
             <input type="email" class="form-control" size="50" placeholder="Email Address">
-            <button type="button" class="btn btn-danger">Sign Up</button>
+            <button type="button" class="btn btn-danger">Sign Up</button></form>
             <p>We love sports !</p>
             <p>TehInt.Sports Copyright</p>
 
     </footer>
 
 @endsection
-
