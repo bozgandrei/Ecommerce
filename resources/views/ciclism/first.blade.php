@@ -82,7 +82,7 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            
+
            <script>
                $(document).ready(function(){
                    // Initialize Tooltip
