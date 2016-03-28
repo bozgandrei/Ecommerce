@@ -150,14 +150,14 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="panel panel-danger">
+                <div class="panel panel-primary">
                     <div class="panel-heading">MTB</div>
                     <div class="panel-body"><img src="{{ asset('/img/ciclism/mtb.jpg') }}" class="img-responsive" style="width:100%" alt="Image"></div>
                     <div class="panel-footer">-20%</div>
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="panel panel-success">
+                <div class="panel panel-primary">
                     <div class="panel-heading">Parts</div>
                     <div class="panel-body"><img src="{{ asset('/img/ciclism/shimano.jpg') }}" class="img-responsive" style="width:100%" alt="Image"></div>
                     <div class="panel-footer">-40%</div>
