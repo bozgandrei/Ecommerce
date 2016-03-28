@@ -91,10 +91,10 @@
         </div>
 
         <div class="item">
-            <a href='cyclism'> <img src="{{ asset('/img/ciclism.jpg') }}" alt="Chicago" width="1200" height="700">
+            <a href='ciclism'> <img src="{{ asset('/img/ciclism.jpg') }}" alt="Chicago" width="1200" height="700">
             <div class="carousel-caption">
-                <h3>Cyclism Products</h3>
-                <p>We love cyclism !</p>
+                <h3>Ciclism Products</h3>
+                <p>We love ciclism !</p>
             </div></a>
         </div>
 
