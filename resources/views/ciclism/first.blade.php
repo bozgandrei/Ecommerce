@@ -4,7 +4,8 @@
     <head>
         <title>Ciclism</title>
     </head>
-
+    <br>
+    <br>
         <div class="container text-center">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
@@ -110,7 +111,10 @@
                })
            </script>
         </div>
-            <br/>
+    <br>
+    <br>
+    <br>
+    <br>
 
     </div>
 <!--
@@ -193,11 +197,12 @@
     </div><br><br>
 
     <footer class="container-fluid text-center">
-        <p>Online Store Copyright</p>
         <form class="form-inline">Get deals:
             <input type="email" class="form-control" size="50" placeholder="Email Address">
             <button type="button" class="btn btn-danger">Sign Up</button>
-        </form>
+            <p>We love sports !</p>
+            <p>TehInt.Sports Copyright</p>
+
     </footer>
 
 @stop

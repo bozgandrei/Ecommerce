@@ -1,40 +1,104 @@
-
 @extends('layouts.app')
 @section('content')
-    {{--<div class="jumbotron">--}}
-        {{--<div class="container text-center">--}}
-            {{--<h1>Fotbal</h1>--}}
-            {{--<p>"A spune ca acesti oameni isi dau banii doar pentru a urmarii 22 de mercenari cum lovesc o minge este ca si cum ai zice ca o vioara este doar un lemn--}}
-            {{--sau Hamlet nu este decat o incropire din cerneala si hartie"</p>--}}
-            {{--<p>J.B.Priestley</p>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-
-    {{--<nav class="navbar navbar-inverse">--}}
-        {{--<div class="container-fluid">--}}
-            {{--<div class="navbar-header">--}}
-                {{--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">--}}
-                    {{--<span class="icon-bar"></span>--}}
-                    {{--<span class="icon-bar"></span>--}}
-                    {{--<span class="icon-bar"></span>--}}
-                {{--</button>--}}
-                {{--<a class="navbar-brand" href='http://localhost/Ecommerce/public/'><img src="http://localhost/Ecommerce/resources/img/Logo2.bmp" class="img-responsive"  alt="Image" width="20" height="40"></a>--}}
-            {{--</div>--}}
-            {{--<div class="collapse navbar-collapse" id="myNavbar">--}}
-                {{--<ul class="nav navbar-nav">--}}
-                    {{--<li class="active"><a href="#">Produse</a></li>--}}
-                    {{--<li><a href="#">Oferte</a></li>--}}
-                    {{--<li><a href="#">Contact</a></li>--}}
-                {{--</ul>--}}
-                {{--<ul class="nav navbar-nav navbar-right">--}}
-                    {{--<li><a href='login'><span class="glyphicon glyphicon-user"></span>Contul tau</a></li>--}}
-                    {{--<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Cos</a></li>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</nav>--}}
-<br>
     <br>
+    <br>
+    <div class="container">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+            <li data-target="#myCarousel" data-slide-to="4"></li>
+            <li data-target="#myCarousel" data-slide-to="5"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <a href='football'>  <img src="{{ asset('/img/football/slider/fotball.jpg') }}" alt="New York" width="1200" height="700" >
+                    <div class="carousel-caption">
+                        <h3>Football Products</h3>
+                        <p>We love football !</p>
+                    </div></a>
+            </div>
+
+            <div class="item">
+                <a href='football'>  <img src="{{ asset('/img/football/slider/xx.jpg') }}" alt="New York" width="1200" height="700" >
+                    <div class="carousel-caption">
+                        <h3>Football Products</h3>
+                        <p>We love football !</p>
+                    </div></a>
+            </div>
+            <div class="item">
+                <a href='football'>  <img src="{{ asset('/img/football/slider/belgia.jpg') }}" alt="New York" width="1200" height="700">
+                    <div class="carousel-caption">
+                        <h3>Football Products</h3>
+                        <p>We love football !</p>
+                    </div></a>
+            </div>
+            <div class="item">
+                <a href='football'>  <img src="{{ asset('/img/football/slider/gemania.jpg') }}" alt="New York" width="1200" height="700">
+                    <div class="carousel-caption">
+                        <h3>Football Products</h3>
+                        <p>We love football !</p>
+                    </div></a>
+            </div>
+            <div class="item">
+                <a href='football'>  <img src="{{ asset('/img/football/slider/france.jpeg') }}" alt="New York" width="1200" height="700" >
+                    <div class="carousel-caption">
+                        <h3>Football Products</h3>
+                        <p>We love football !</p>
+                    </div></a>
+            </div>
+            <div class="item">
+                <a href='football'>  <img src="{{ asset('/img/football/slider/best.jpg') }}" alt="New York" width="1200" height="700" >
+                    <div class="carousel-caption">
+                        <h3>Football Products</h3>
+                        <p>We love football !</p>
+                    </div></a>
+            </div>
+        </div>
+
+        <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            // Initialize Tooltip
+            $('[data-toggle="tooltip"]').tooltip();
+
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+                // Prevent default anchor click behavior
+                event.preventDefault();
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            });
+        })
+    </script>
+    </div>
     <br>
     <br>
     <br>
@@ -42,25 +106,32 @@
 
     <div class="container">
         <div class="row"><a href='#'>
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Game kit</div>
-                    <div class="panel-body"><img src="http://localhost:8000/Ecommerce/resources/img/football/echipament.jpg" class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>
-                    <div class="panel-footer">Shirts, aprons, leggings...</div>
+                <div class="col-sm-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">Game kit</div>
+                        <div class="panel-body"><img
+                                    src="{{ asset('/img/football/echipament.jpg') }}"
+                                    class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>
+                        <div class="panel-footer">Shirts, aprons, leggings...</div>
+                    </div>
                 </div>
-            </div></a>
+            </a>
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading">Training kit</div>
-                    <div class="panel-body"><img src="http://localhost/Ecommerce/resources/img/football/antrenament.jpg" class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>
+                    <div class="panel-body"><img src="{{ asset('/img/football/antrenament.jpg') }}"
+                                                 class="img-responsive" style="width:100%" alt="Image" width="50"
+                                                 height="70"></div>
                     <div class="panel-footer">Trainings, baselayer,shirts and blouses...</div>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading">Presentation kit</div>
-                    <div class="panel-body"><img src="http://localhost/Ecommerce/resources/img/football/prezentare.jpg" class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>
-                    <div class="panel-footer">Coats and jackets, trainings, shirts... </div>
+                    <div class="panel-body"><img src="{{ asset('/img/football/prezentare.jpg') }}"
+                                                 class="img-responsive" style="width:100%" alt="Image" width="50"
+                                                 height="70"></div>
+                    <div class="panel-footer">Coats and jackets, trainings, shirts...</div>
                 </div>
             </div>
         </div>
@@ -71,30 +142,39 @@
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading">Referee kit</div>
-                    <div class="panel-body"><img src="http://localhost/Ecommerce/resources/img/football/arbitru.jpg" class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>
+                    <div class="panel-body"><img src="{{ asset('/img/football/arbitru.jpg') }}"
+                                                 class="img-responsive" style="width:100%" alt="Image" width="50"
+                                                 height="70"></div>
                     <div class="panel-footer">Best deals.</div>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading">Accessories and bals</div>
-                    <div class="panel-body"><img src="http://localhost/Ecommerce/resources/img/football/mingi.jpg" class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>
+                    <div class="panel-body"><img src="{{ asset('/img/football/mingi.jpg') }}"
+                                                 class="img-responsive" style="width:100%" alt="Image" width="50"
+                                                 height="70"></div>
                     <div class="panel-footer">Bals, bags, protections...</div>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading">LifeStyle</div>
-                    <div class="panel-body"><img src="http://localhost/Ecommerce/resources/img/football/lifestyle.jpg" class="img-responsive" style="width:100%" alt="Image" width="50" height="70"s></div>
-                    <div class="panel-footer">Shirts and blouses,shorts and trousers...  </div>
+                    <div class="panel-body"><img src="{{ asset('/img/football/lifestyle.jpg') }}"
+                                                 class="img-responsive" style="width:100%" alt="Image" width="50"
+                                                 height="70" s></div>
+                    <div class="panel-footer">Shirts and blouses,shorts and trousers...</div>
                 </div>
             </div>
         </div>
     </div><br><br>
 
     <footer class="container-fluid text-center">
-        <p>We love sports !</p>
-        <p>TehInt.Sports Copyright</p>
+        <form class="form-inline">Get deals:
+            <input type="email" class="form-control" size="50" placeholder="Email Address">
+            <button type="button" class="btn btn-danger">Sign Up</button>
+            <p>We love sports !</p>
+            <p>TehInt.Sports Copyright</p>
 
     </footer>
 
