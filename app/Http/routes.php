@@ -19,8 +19,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/football', function (){
        return view('football.first');
     });
-    Route::get('/cyclism', function (){
-        return view('cyclism.first');
+    Route::get('/ciclism', function (){
+        return view('ciclism.first');
     });
     Route::get('/login', function (){
         return view('auth.login');
