@@ -22,6 +22,7 @@ class Produse extends Migration
             $table->string('nume');
             $table->double('pret');
             $table->string('id_categorie');
+            $table->integer('stoc');
             $table->string('descriere');
             $table->string('poza');
             $table->timestamps();

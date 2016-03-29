@@ -31,6 +31,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::auth();
 
     Route::get('/home', 'HomeController@index');
+    Route::get('/addprodus', function (){
+        return view('entities.add.addprodus');
+    });
+    Route::post('/addprodus','ProduseController@newProdus');
 });
 
 
