@@ -35,6 +35,7 @@ Route::group(['middleware' => ['web']], function () {
         return view('entities.add.addprodus');
     });
     Route::post('/addprodus','ProduseController@newProdus');
+    Route::get('/addprodus', 'ProduseController@add');
 });
 
 
