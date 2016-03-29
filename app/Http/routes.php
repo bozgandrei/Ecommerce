@@ -22,6 +22,11 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/ciclism', function (){
         return view('ciclism.first');
     });
+
+    Route::get('/add_message', function (){
+        return view('entities.add.addmessage');
+    });
+
     Route::get('/login', function (){
         return view('auth.login');
     });

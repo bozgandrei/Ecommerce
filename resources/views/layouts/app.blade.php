@@ -52,6 +52,7 @@
                     <li class="active"><a href='football'>Products</a></li>
                     <li><a href="#">Deals</a></li>
                     <li><a href="#">Contact</a></li>
+                    <li><a href="/addprodus">Add Product</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
