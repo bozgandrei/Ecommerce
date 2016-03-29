@@ -32,7 +32,7 @@ class ProduseController extends Controller
 
 
             if ($produs->save()) {
-                return Redirect::to('/add_message')->with('success', 'You added succesfully.');
+                return Redirect::to('/add_message_prod')->with('success', 'You added succesfully.');
             } else {
                 dd('error');
             }

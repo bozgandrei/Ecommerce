@@ -23,8 +23,12 @@ Route::group(['middleware' => ['web']], function () {
         return view('ciclism.first');
     });
 
-    Route::get('/add_message', function (){
-        return view('entities.add.addmessage');
+    Route::get('/add_message_prod', function (){
+        return view('entities.add.addmessage_prod');
+    });
+
+    Route::get('/add_message_cat', function (){
+        return view('entities.add.addmessage_cat');
     });
 
     Route::get('/login', function (){
@@ -41,6 +45,13 @@ Route::group(['middleware' => ['web']], function () {
     });
     Route::post('/addprodus','ProduseController@newProdus');
     Route::get('/addprodus', 'ProduseController@add');
+
+    Route::get('/addcategori', function (){
+        return view('entities.add.addcategori');
+    });
+
+    Route::post('/addcategori','CategorieController@newCategorie');
+
 });
 
 

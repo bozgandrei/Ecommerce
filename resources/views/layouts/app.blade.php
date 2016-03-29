@@ -54,6 +54,7 @@
                     <li><a href="#">Deals</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href='addprodus'>Add Product</a></li>
+                    <li><a href='addcategori'>Add Category</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
