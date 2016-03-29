@@ -53,8 +53,12 @@
                     <li class="active"><a href='football'>Products</a></li>
                     <li><a href="#">Deals</a></li>
                     <li><a href="#">Contact</a></li>
-                    <li><a href='addprodus'>Add Product</a></li>
-                    <li><a href='addcategori'>Add Category</a></li>
+                    @if(!Auth::guest())
+                        @if(Auth::user()->tip=='ADMIN')
+                        <li><a href='addprodus'>Add Product</a></li>
+                        <li><a href='addcategori'>Add Category</a></li>
+                             @endif
+                        @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -69,10 +73,13 @@
 
 
 
+
+
+
                                 <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout ({{ Auth::user()->name }})</a></li>
-
-
                     @endif
+
+
                 </ul>
             </div>
   </nav>

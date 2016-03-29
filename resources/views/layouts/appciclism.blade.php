@@ -53,8 +53,12 @@
                 <li class="active"><a href='ciclism'>Products</a></li>
                 <li><a href="#">Deals</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href='addprodus'>Add Product</a></li>
-                <li><a href='addcategori'>Add Category</a></li>
+                @if(!Auth::guest())
+                    @if(Auth::user()->tip=='ADMIN')
+                        <li><a href='addprodus'>Add Product</a></li>
+                        <li><a href='addcategori'>Add Category</a></li>
+                    @endif
+                @endif
             </ul>
 
             <!-- Right Side Of Navbar -->
