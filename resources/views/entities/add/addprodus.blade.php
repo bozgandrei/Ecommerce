@@ -38,27 +38,27 @@
                            aria-describedby="min">
                 </div>
             </div>
-            <div class="j6">
-                <div class="input-group input-group-lg">
-                    <span class="input-group-addon" id="id_categorie"><span class="label label-primary">Categorie</span></span>
-                    <input type="decimal" class="form-control" name="id_categorie" placeholder="Categorie"
-                           aria-describedby="max">
-                </div>
-            </div>
-            {{--<div class="j8">--}}
-                {{--<div role="form">--}}
-                    {{--<div class="form-group">--}}
-                        {{--<label for="sel1">{{trans('translate.select_station')}}:</label>--}}
-                        {{--<select class="form-control" id="sel1" name="station">--}}
-                            {{--@foreach($stations as $station)--}}
-                                {{--<option value="{{$station->serial_no}}">{{$station->serial_no}}-{{$station->location}}</option>--}}
-                            {{--@endforeach--}}
-                        {{--</select>--}}
-
-                    {{--</div>--}}
+            {{--<div class="j6">--}}
+                {{--<div class="input-group input-group-lg">--}}
+                    {{--<span class="input-group-addon" id="id_categorie"><span class="label label-primary">Categorie</span></span>--}}
+                    {{--<input type="decimal" class="form-control" name="id_categorie" placeholder="Categorie"--}}
+                           {{--aria-describedby="max">--}}
                 {{--</div>--}}
-
             {{--</div>--}}
+            <div class="j8">
+                <div role="form">
+                    <div class="form-group">
+                        <label for="sel1">Categorie:</label>
+                        <select class="form-control" id="sel1" name="id_categorie">
+                            @foreach($categorie as $categori)
+                                <option value="{{$categori->id_categorie}}">{{$categori->nume}}</option>
+                            @endforeach
+                        </select>
+
+                    </div>
+                </div>
+
+            </div>
 
             <div class="j1">
                 <button href="new" type="submit" class="btn btn-info btn-lg"><span

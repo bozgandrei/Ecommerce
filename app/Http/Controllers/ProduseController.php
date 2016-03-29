@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Produse;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
@@ -37,4 +38,11 @@ class ProduseController extends Controller
             }
         }
     }
+    public function add(){
+
+        $categorie = DB::table('categori')->get();
+        return view('entities.add.addprodus', ['categorie' => $categorie]);
+    }
+
+
 }
