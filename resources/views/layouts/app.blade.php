@@ -56,13 +56,35 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href='football'>Products</a></li>
+                    {{--<li class="active"><a href='football'>Products</a></li>--}}
+                    <li class="dropdown">
+                        <a class="dropdown-toggle"
+                           data-toggle="dropdown"
+                           href="#">
+                            Products
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href='football'>Fotbal</a></li>
+                            <li><a href='ciclism'>Ciclism</a></li>
+                        </ul>
                     <li><a href="#">Deals</a></li>
                     <li><a href="#">Contact</a></li>
+
                     @if(!Auth::guest())
                         @if(Auth::user()->tip=='ADMIN')
-                        <li><a href='addprodus'>Add Product</a></li>
-                        <li><a href='addcategori'>Add Category</a></li>
+                            <li class="dropdown">
+                                <a class="dropdown-toggle"
+                                   data-toggle="dropdown"
+                                   href="#">
+                                    Add
+                                    <b class="caret"></b>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href='addprodus'>Add Product</a></li>
+                                    <li><a href='addcategori'>Add Category</a></li>
+                                </ul>
+                            </li>
                              @endif
                         @endif
                 </ul>
