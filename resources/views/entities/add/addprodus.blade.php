@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form method="post" action="{{URL::to('addprodus')}}">
+        <form method="post" action="{{URL::to('addprodus')}}" id="AddProdus">
 
             <input type="hidden" name="_token" value="">
             <div class="j">
@@ -67,23 +67,22 @@
             </div>
             {!! csrf_field() !!}
         </form></div>
+
     <script  type="text/javascript">
-        var frmvalidator = new Validator("myform");
-        frmvalidator.addValidation("FirstName","req","Please enter your First Name");
-        frmvalidator.addValidation("FirstName","maxlen=20",
-                "Max length for FirstName is 20");
+        var frmvalidator = new Validator("AddProdus");
+        frmvalidator.addValidation("nume","req");
+        frmvalidator.addValidation("nume","maxlen=20");
 
-        frmvalidator.addValidation("LastName","req");
-        frmvalidator.addValidation("LastName","maxlen=20");
+        frmvalidator.addValidation("pret","req");
+        frmvalidator.addValidation("pret","maxlen=20");
 
-        frmvalidator.addValidation("Email","maxlen=50");
-        frmvalidator.addValidation("Email","req");
-        frmvalidator.addValidation("Email","email");
+        frmvalidator.addValidation("stoc","req");
+        frmvalidator.addValidation("stoc","maxlen=20");
 
-        frmvalidator.addValidation("Phone","maxlen=50");
-        frmvalidator.addValidation("Phone","numeric");
+        frmvalidator.addValidation("descriere","req");
+        frmvalidator.addValidation("descriere","maxlen=20");
 
-        frmvalidator.addValidation("Address","maxlen=50");
-        frmvalidator.addValidation("Country","dontselect=000");
+        frmvalidator.addValidation("poza","req");
+        frmvalidator.addValidation("poza","maxlen=20");;
     </script>
 @stop

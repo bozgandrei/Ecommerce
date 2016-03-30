@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form method="post" action="{{URL::to('addcategori')}}">
+        <form method="post" action="{{URL::to('addcategori')}}" id="AddCategorie">
 
             <input type="hidden" name="_token" value="">
             <div class="j">
@@ -21,4 +21,10 @@
             </div>
             {!! csrf_field() !!}
         </form></div>
+
+    <script  type="text/javascript">
+        var frmvalidator = new Validator("AddCategorie");
+        frmvalidator.addValidation("nume","req");
+        frmvalidator.addValidation("nume","maxlen=20");
+    </script>
 @stop
