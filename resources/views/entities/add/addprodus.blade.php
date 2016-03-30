@@ -2,34 +2,54 @@
 
 @section('content')
     <div class="container">
-        <form method="post" action="{{URL::to('addprodus')}}" id="AddProdus">
 
+        <form method="post"  action="{{URL::to('addprodus')}}">
             <input type="hidden" name="_token" value="">
             <div class="j">
                 <div class="input-group input-group-lg">
                 <span class="input-group-addon" id="serialno"><span
                             class="label label-primary">Nume</span></span>
                     <input type="text" class="form-control" name="nume" placeholder="Nume"
-                           aria-describedby="Nume">
-                </div>
+                           aria-describedby="Nume"></div>
+                    @if ($errors->has('nume'))
+                        <span  class="help-block" style="float: right">
+                                        <strong>{{ $errors->first('nume') }}</strong>
+                                    </span>
+                    @endif
             </div>
+
             <div class="j2">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon" id="Pret"><span class="label label-primary">Pret</span></span>
                     <input type="integer" class="form-control" name="pret" placeholder="Pret" aria-describedby="type">
                 </div>
+                @if ($errors->has('pret'))
+                    <span class="help-block" style="float: right">
+                                        <strong>{{ $errors->first('pret') }}</strong>
+                                    </span>
+                @endif
             </div>
             <div class="j3">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon" id="info"><span class="label label-primary">Stoc</span></span>
                     <input type="text" class="form-control" name="stoc" placeholder="Stoc" aria-describedby="Stoc">
                 </div>
+                @if ($errors->has('stoc'))
+                    <span class="help-block" style="float: right">
+                                        <strong>{{ $errors->first('stoc') }}</strong>
+                                    </span>
+                @endif
             </div>
             <div class="j4">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon" id="time"><span class="label label-primary">Descriere</span></span>
                     <input type="text" class="form-control" name="descriere" placeholder="Descriere" aria-describedby="time">
                 </div>
+                @if ($errors->has('descriere'))
+                    <span class="help-block" style="float: right">
+                                        <strong>{{ $errors->first('descriere') }}</strong>
+                                    </span>
+                @endif
             </div>
             <div class="j5">
                 <div class="input-group input-group-lg">
@@ -66,23 +86,58 @@
                 </button>
             </div>
             {!! csrf_field() !!}
-        </form></div>
+        </form>
+        <script>
+            $(document).ready(function() {
 
-    <script  type="text/javascript">
-        var frmvalidator = new Validator("AddProdus");
-        frmvalidator.addValidation("nume","req");
-        frmvalidator.addValidation("nume","maxlen=20");
-
-        frmvalidator.addValidation("pret","req");
-        frmvalidator.addValidation("pret","maxlen=20");
-
-        frmvalidator.addValidation("stoc","req");
-        frmvalidator.addValidation("stoc","maxlen=20");
-
-        frmvalidator.addValidation("descriere","req");
-        frmvalidator.addValidation("descriere","maxlen=20");
-
-        frmvalidator.addValidation("poza","req");
-        frmvalidator.addValidation("poza","maxlen=20");;
-    </script>
+                $('#basicBootstrapForm').formValidation({
+                    fields: {
+                        nume: {
+                            row: '.col-xs-4',
+                            validators: {
+                                notEmpty: {
+                                    message: 'The first name is required'
+                                }
+                            }
+                        },
+                        pret: {
+                            row: '.col-xs-4',
+                            validators: {
+                                notEmpty: {
+                                    message: 'The last name is required'
+                                }
+                            }
+                        },
+                        stoc: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'The username is required'
+                                },
+                                stringLength: {
+                                    min: 6,
+                                    max: 30,
+                                    message: 'The username must be more than 6 and less than 30 characters long'
+                                },
+                                regexp: {
+                                    regexp: /^[a-zA-Z0-9_\.]+$/,
+                                    message: 'The username can only consist of alphabetical, number, dot and underscore'
+                                }
+                            }
+                        },
+                        poza: {
+                            validators: {
+                                notEmpty: {
+                                    message: 'The password is required'
+                                },
+                                different: {
+                                    field: 'username',
+                                    message: 'The password cannot be the same as username'
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+        </script>
+    </div>
 @stop

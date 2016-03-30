@@ -18,9 +18,10 @@ class ProduseController extends Controller
             'descriere' => 'required',
             'poza' => 'required'
         ));
+
         if ($validate->fails()) {
 
-            dd('Error');
+            return Redirect::to('addprodus')->withErrors($validate)->withInput();
         } else {
             $produs = new Produse();
             $produs->nume= Input::get('nume');

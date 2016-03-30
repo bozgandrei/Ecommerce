@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <form method="post" action="{{URL::to('addcategori')}}" id="AddCategorie">
+        <form method="post" action="{{URL::to('addcategori')}}">
 
             <input type="hidden" name="_token" value="">
             <div class="j">
@@ -12,6 +12,11 @@
                     <input type="text" class="form-control" name="nume" placeholder="Nume"
                            aria-describedby="Nume">
                 </div>
+                @if ($errors->has('nume'))
+                    <span class="help-block" style="float: right">
+                                        <strong>{{ $errors->first('nume') }}</strong>
+                                    </span>
+                @endif
             </div>
 
             <div class="j2">
@@ -21,10 +26,4 @@
             </div>
             {!! csrf_field() !!}
         </form></div>
-
-    <script  type="text/javascript">
-        var frmvalidator = new Validator("AddCategorie");
-        frmvalidator.addValidation("nume","req");
-        frmvalidator.addValidation("nume","maxlen=20");
-    </script>
 @stop

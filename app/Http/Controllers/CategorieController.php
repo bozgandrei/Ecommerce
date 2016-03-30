@@ -18,7 +18,7 @@ class CategorieController extends Controller
         ));
         if ($validate->fails()) {
 
-            dd('Error');
+            return Redirect::to('addcategori')->withErrors($validate)->withInput();
         } else {
             $categorie = new Categorie();
             $categorie->nume = Input::get('nume');
