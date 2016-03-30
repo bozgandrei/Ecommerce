@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
 
-        <form method="post"  action="{{URL::to('addprodus')}}">
+        <form method="post"  action="{{URL::to('addprodus')}}" id="AddProdus">
             <input type="hidden" name="_token" value="">
             <div class="j">
                 <div class="input-group input-group-lg">
@@ -87,57 +87,24 @@
             </div>
             {!! csrf_field() !!}
         </form>
-        <script>
-            $(document).ready(function() {
 
-                $('#basicBootstrapForm').formValidation({
-                    fields: {
-                        nume: {
-                            row: '.col-xs-4',
-                            validators: {
-                                notEmpty: {
-                                    message: 'The first name is required'
-                                }
-                            }
-                        },
-                        pret: {
-                            row: '.col-xs-4',
-                            validators: {
-                                notEmpty: {
-                                    message: 'The last name is required'
-                                }
-                            }
-                        },
-                        stoc: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'The username is required'
-                                },
-                                stringLength: {
-                                    min: 6,
-                                    max: 30,
-                                    message: 'The username must be more than 6 and less than 30 characters long'
-                                },
-                                regexp: {
-                                    regexp: /^[a-zA-Z0-9_\.]+$/,
-                                    message: 'The username can only consist of alphabetical, number, dot and underscore'
-                                }
-                            }
-                        },
-                        poza: {
-                            validators: {
-                                notEmpty: {
-                                    message: 'The password is required'
-                                },
-                                different: {
-                                    field: 'username',
-                                    message: 'The password cannot be the same as username'
-                                }
-                            }
-                        }
-                    }
-                });
-            });
-        </script>
-    </div>
+
+        <!-- Merge peste prima varianta de Vaildare pe client-->
+       {{-- <script  type="text/javascript">
+            var frmvalidator = new Validator("AddProdus");
+            frmvalidator.addValidation("nume","req");
+            frmvalidator.addValidation("nume","maxlen=20");
+
+            frmvalidator.addValidation("pret","req");
+            frmvalidator.addValidation("pret","maxlen=20");
+
+            frmvalidator.addValidation("stoc","req");
+            frmvalidator.addValidation("stoc","maxlen=20");
+
+            frmvalidator.addValidation("descriere","req");
+            frmvalidator.addValidation("descriere","maxlen=20");
+
+            frmvalidator.addValidation("poza","req");
+            frmvalidator.addValidation("poza","maxlen=20");;
+        </script>--}}
 @stop
