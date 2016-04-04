@@ -16,20 +16,27 @@ class ProduseController extends Controller
             'stoc' => 'required',
             'pret' => 'required',
             'descriere' => 'required',
-            'poza' => 'required'
+
         ));
 
         if ($validate->fails()) {
 
             return Redirect::to('addprodus')->withErrors($validate)->withInput();
         } else {
+            //pentru upload
+            $file = Input::file('file');
+            $file -> move('imaginiUpload', $file->getClientOriginalName());
+            $path='http://localhost:8000/imaginiUpload/' . $file->getClientOriginalName();
+
             $produs = new Produse();
             $produs->nume= Input::get('nume');
             $produs->pret = Input::get('pret');
             $produs->id_categorie= Input::get('id_categorie');
             $produs->stoc = Input::get('stoc');
             $produs->descriere = Input::get('descriere');
-            $produs->poza = Input::get ('poza');
+            //$produs->poza = Input::get ('poza');
+            //$produs->poza = Input::get('file');
+            $produs->poza = $path;
 
 
             if ($produs->save()) {
@@ -45,5 +52,19 @@ class ProduseController extends Controller
         return view('entities.add.addprodus', ['categorie' => $categorie]);
     }
 
+    //De pus la addprodus ???
+
+    public function upload(){
+        if(Input::hasFile('file')) {
+            echo "uploaded";
+            $file = Input::file('file');
+            $file -> move('imaginiUpload', $file->getClientOriginalName());
+            echo '<img src="imaginiUpload/' . $file->getClientOriginalName() . '" />';
+            $path='http://localhost:8000/imaginiUpload/' . $file->getClientOriginalName();
+        }
+    }
+    public function getPicture(){
+        $image=DB::table('produse')->get();
+    }
 
 }

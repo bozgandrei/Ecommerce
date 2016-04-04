@@ -45,6 +45,7 @@ Route::group(['middleware' => ['web']], function () {
     });
     Route::post('/addprodus','ProduseController@newProdus');
     Route::get('/addprodus', 'ProduseController@add');
+    Route::post('/upload', 'ProduseController@upload');
 
     Route::get('/addcategori', function (){
         return view('entities.add.addcategori');

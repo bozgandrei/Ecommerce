@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
 
-        <form method="post"  action="{{URL::to('addprodus')}}" id="AddProdus">
+        <form method="post"  action="{{URL::to('addprodus')}}" id="AddProdus" enctype="multipart/form-data">
             <input type="hidden" name="_token" value="">
             <div class="j">
                 <div class="input-group input-group-lg">
@@ -51,11 +51,20 @@
                                     </span>
                 @endif
             </div>
-            <div class="j5">
+            {{--<div class="j5">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon" id="min"><span class="label label-primary">Poza</span></span>
                     <input type="text" class="form-control" name="poza" placeholder="Poza"
                            aria-describedby="min">
+                </div>
+            </div>--}}
+            <div class="j5">
+                <div role="form">
+                    <div class="form-group">
+                        <label for="sel1">Select image to upload:</label>
+                        <input class="form-control" type="file" name="file" id="file">
+                        <input type="hidden" value="{{ csrf_token() }}" name="_token">
+                    </div>
                 </div>
             </div>
             {{--<div class="j6">--}}
