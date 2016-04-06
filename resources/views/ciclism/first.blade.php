@@ -144,56 +144,60 @@
         </div>
     </nav>
 -->
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Road Bike</div>
-                    <div class="panel-body"><img src="{{ asset('/img/ciclism/cursiera.jpg') }}" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">-20%</div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">MTB</div>
-                    <div class="panel-body"><img src="{{ asset('/img/ciclism/mtb.jpg') }}" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">-20%</div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Parts</div>
-                    <div class="panel-body"><img src="{{ asset('/img/ciclism/shimano.jpg') }}" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">-40%</div>
-                </div>
-            </div>
-        </div>
-    </div><br>
 
     <div class="container">
         <div class="row">
+
+        @foreach($produs as $produ)
+
             <div class="col-sm-4">
                 <div class="panel panel-primary">
-                    <div class="panel-heading">Wheels</div>
-                    <div class="panel-body"><img src="{{ asset('/img/ciclism/roti.jpg') }}"" class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>
-                    <div class="panel-footer">-10%</div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Head Gear</div>
-                    <div class="panel-body"><img src="{{ asset('/img/ciclism/costum.jpg') }}" class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>
-                    <div class="panel-footer">-50%</div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Bottles</div>
-                    <div class="panel-body"><img src="{{ asset('/img/ciclism/pantofi.jpg') }}" class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>
-                    <div class="panel-footer">-50 Ron</div>
-                </div>
-            </div>
+                    <div class="panel-heading">{{ $produ->nume }}</div>
+                    <div class="panel-body"><img src="{{ $produ->poza }}" class="img-responsive" style="width:100%" alt="Image"></div>
+                    <div class="panel-footer">{{ $produ->pret }} RON</div>
+
+            </div></div>
+
+            {{--<div class="col-sm-4">--}}
+                {{--<div class="panel panel-primary">--}}
+                    {{--<div class="panel-heading">MTB</div>--}}
+                    {{--<div class="panel-body"><img src="{{ asset('/img/ciclism/mtb.jpg') }}" class="img-responsive" style="width:100%" alt="Image"></div>--}}
+                    {{--<div class="panel-footer">-20%</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-4">--}}
+                {{--<div class="panel panel-primary">--}}
+                    {{--<div class="panel-heading">Parts</div>--}}
+                    {{--<div class="panel-body"><img src="{{ asset('/img/ciclism/shimano.jpg') }}" class="img-responsive" style="width:100%" alt="Image"></div>--}}
+                    {{--<div class="panel-footer">-40%</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+            @endforeach
         </div>
+        {{--<div class="row">--}}
+            {{--<div class="col-sm-4">--}}
+                {{--<div class="panel panel-primary">--}}
+                    {{--<div class="panel-heading">Wheels</div>--}}
+                    {{--<div class="panel-body"><img src="{{ asset('/img/ciclism/roti.jpg') }}"" class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>--}}
+                    {{--<div class="panel-footer">-10%</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-4">--}}
+                {{--<div class="panel panel-primary">--}}
+                    {{--<div class="panel-heading">Head Gear</div>--}}
+                    {{--<div class="panel-body"><img src="{{ asset('/img/ciclism/costum.jpg') }}" class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>--}}
+                    {{--<div class="panel-footer">-50%</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-4">--}}
+                {{--<div class="panel panel-primary">--}}
+                    {{--<div class="panel-heading">Bottles</div>--}}
+                    {{--<div class="panel-body"><img src="{{ asset('/img/ciclism/pantofi.jpg') }}" class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>--}}
+                    {{--<div class="panel-footer">-50 Ron</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
     </div><br><br>
 
     <footer class="container-fluid text-center">

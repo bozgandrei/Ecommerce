@@ -19,9 +19,11 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/football', function (){
        return view('football.first');
     });
-    Route::get('/ciclism', function (){
+    /*Route::get('/ciclism', function (){
         return view('ciclism.first');
-    });
+    });*/
+
+    Route::get('/ciclism', 'ProduseController@showProdus');
 
     Route::get('/add_message_prod', function (){
         return view('entities.add.addmessage_prod');

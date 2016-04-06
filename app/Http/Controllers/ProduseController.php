@@ -67,4 +67,11 @@ class ProduseController extends Controller
         $image=DB::table('produse')->get();
     }
 
+    public function showProdus()
+    {
+        $produs = DB::table('produse')->where('id_categorie', '5')->get();
+
+        return view('ciclism.first', compact('produs'));
+    }
+
 }

@@ -73,6 +73,12 @@
 
                 @if(!Auth::guest())
                     @if(Auth::user()->tip=='ADMIN')
+                        <li><a href='addprodus'>Add Product</a></li>
+                    @endif
+                @endif
+
+                {{--@if(!Auth::guest())
+                    @if(Auth::user()->tip=='ADMIN')
                         <li class="dropdown">
                             <a class="dropdown-toggle"
                                data-toggle="dropdown"
@@ -86,7 +92,7 @@
                             </ul>
                         </li>
                     @endif
-                @endif
+                @endif--}}
             </ul>
 
             <!-- Right Side Of Navbar -->
