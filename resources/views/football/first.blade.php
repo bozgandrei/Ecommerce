@@ -115,70 +115,81 @@
     <br>
     <br>
     <br>
-
-    <div class="container">
-        <div class="row"><a href='#'>
-                <div class="col-sm-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">Game kit</div>
-                        <div class="panel-body"><img
-                                    src="{{ asset('/img/football/echipament.jpg') }}"
-                                    class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>
-                        <div class="panel-footer">-24%</div>
-                    </div>
-                </div>
-            </a>
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Training kit</div>
-                    <div class="panel-body"><img src="{{ asset('/img/football/antrenament.jpg') }}"
-                                                 class="img-responsive" style="width:100%" alt="Image" width="50"
-                                                 height="70"></div>
-                    <div class="panel-footer">-30%</div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Presentation kit</div>
-                    <div class="panel-body"><img src="{{ asset('/img/football/prezentare.jpg') }}"
-                                                 class="img-responsive" style="width:100%" alt="Image" width="50"
-                                                 height="70"></div>
-                    <div class="panel-footer">-10%</div>
-                </div>
-            </div>
-        </div>
-    </div><br>
-
     <div class="container">
         <div class="row">
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Referee kit</div>
-                    <div class="panel-body"><img src="{{ asset('/img/football/arbitru.jpg') }}"
-                                                 class="img-responsive" style="width:100%" alt="Image" width="50"
-                                                 height="70"></div>
-                    <div class="panel-footer">-15%</div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">Accessories and balls</div>
-                    <div class="panel-body"><img src="{{ asset('/img/football/mingi.jpg') }}"
-                                                 class="img-responsive" style="width:100%" alt="Image" width="50"
-                                                 height="70"></div>
-                    <div class="panel-footer">-20%</div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="panel panel-primary">
-                    <div class="panel-heading">LifeStyle</div>
-                    <div class="panel-body"><img src="{{ asset('/img/football/lifestyle.jpg') }}"
-                                                 class="img-responsive" style="width:100%" alt="Image" width="50"
-                                                 height="70" s></div>
-                    <div class="panel-footer">-5%</div>
-                </div>
-            </div>
-        </div>
+
+            @foreach($produsFB as $produ)
+
+                <div class="col-sm-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">{{ $produ->nume }}</div>
+                        <div class="panel-body"><img src="{{ $produ->poza }}" class="img-responsive" style="width:100%" alt="Image"></div>
+                        <div class="panel-footer">{{ $produ->pret }} RON</div>
+
+                    </div></div>@endforeach</div>
+    {{--<div class="container">--}}
+        {{--<div class="row"><a href='#'>--}}
+                {{--<div class="col-sm-4">--}}
+                    {{--<div class="panel panel-primary">--}}
+                        {{--<div class="panel-heading">Game kit</div>--}}
+                        {{--<div class="panel-body"><img--}}
+                                    {{--src="{{ asset('/img/football/echipament.jpg') }}"--}}
+                                    {{--class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>--}}
+                        {{--<div class="panel-footer">-24%</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</a>--}}
+            {{--<div class="col-sm-4">--}}
+                {{--<div class="panel panel-primary">--}}
+                    {{--<div class="panel-heading">Training kit</div>--}}
+                    {{--<div class="panel-body"><img src="{{ asset('/img/football/antrenament.jpg') }}"--}}
+                                                 {{--class="img-responsive" style="width:100%" alt="Image" width="50"--}}
+                                                 {{--height="70"></div>--}}
+                    {{--<div class="panel-footer">-30%</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-4">--}}
+                {{--<div class="panel panel-primary">--}}
+                    {{--<div class="panel-heading">Presentation kit</div>--}}
+                    {{--<div class="panel-body"><img src="{{ asset('/img/football/prezentare.jpg') }}"--}}
+                                                 {{--class="img-responsive" style="width:100%" alt="Image" width="50"--}}
+                                                 {{--height="70"></div>--}}
+                    {{--<div class="panel-footer">-10%</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</div><br>--}}
+
+    {{--<div class="container">--}}
+        {{--<div class="row">--}}
+            {{--<div class="col-sm-4">--}}
+                {{--<div class="panel panel-primary">--}}
+                    {{--<div class="panel-heading">Referee kit</div>--}}
+                    {{--<div class="panel-body"><img src="{{ asset('/img/football/arbitru.jpg') }}"--}}
+                                                 {{--class="img-responsive" style="width:100%" alt="Image" width="50"--}}
+                                                 {{--height="70"></div>--}}
+                    {{--<div class="panel-footer">-15%</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-4">--}}
+                {{--<div class="panel panel-primary">--}}
+                    {{--<div class="panel-heading">Accessories and balls</div>--}}
+                    {{--<div class="panel-body"><img src="{{ asset('/img/football/mingi.jpg') }}"--}}
+                                                 {{--class="img-responsive" style="width:100%" alt="Image" width="50"--}}
+                                                 {{--height="70"></div>--}}
+                    {{--<div class="panel-footer">-20%</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="col-sm-4">--}}
+                {{--<div class="panel panel-primary">--}}
+                    {{--<div class="panel-heading">LifeStyle</div>--}}
+                    {{--<div class="panel-body"><img src="{{ asset('/img/football/lifestyle.jpg') }}"--}}
+                                                 {{--class="img-responsive" style="width:100%" alt="Image" width="50"--}}
+                                                 {{--height="70" s></div>--}}
+                    {{--<div class="panel-footer">-5%</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+        {{--</div>--}}
     </div><br><br>
 
     <footer class="container-fluid text-center">

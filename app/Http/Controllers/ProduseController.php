@@ -67,11 +67,24 @@ class ProduseController extends Controller
         $image=DB::table('produse')->get();
     }
 
-    public function showProdus()
+    public function showProdusCiclism()
     {
         $produs = DB::table('produse')->where('id_categorie', '5')->get();
+        $produsFB = DB::table('produse')->where('id_categorie', '4')->get();
 
         return view('ciclism.first', compact('produs'));
     }
+    public function showProdusFotbal()
+    {
+        $produsFB = DB::table('produse')->where('id_categorie', '4')->get();
+
+        return view('football.first', ['produsFB'=>$produsFB]);
+    }
+
+    /*public function editProdus($id)
+    {
+        $produs = Produs::findOrFail($id);
+        return view('articles.edit', compact('article'));
+    }*/
 
 }
