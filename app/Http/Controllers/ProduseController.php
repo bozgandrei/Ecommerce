@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 class ProduseController extends Controller
 {
+
+    //Creare obiect nou de tip Produs si incarcarea cu date
     public function newProdus() {
         $validate = Validator::make(Input::all(), array(
             'nume' => 'required',
@@ -46,6 +48,8 @@ class ProduseController extends Controller
             }
         }
     }
+
+    //Adauga in baza de date
     public function add(){
 
         $categorie = DB::table('categori')->get();
@@ -63,10 +67,13 @@ class ProduseController extends Controller
             $path='http://localhost:8000/imaginiUpload/' . $file->getClientOriginalName();
         }
     }
+
+    //Gaseste poza produsului
     public function getPicture(){
         $image=DB::table('produse')->get();
     }
 
+    //Afisare produse
     public function showProdusCiclism()
     {
         $produs = DB::table('produse')->where('id_categorie', '5')->get();
@@ -86,5 +93,10 @@ class ProduseController extends Controller
         $produs = Produs::findOrFail($id);
         return view('articles.edit', compact('article'));
     }*/
+
+    //Incarcare modal Detalii produs
+    public function loadJsModalForm() {
+        return View::make('ciclism.modalDetaliiProdus');
+    }
 
 }

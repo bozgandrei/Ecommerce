@@ -23,17 +23,20 @@ Route::group(['middleware' => ['web']], function () {
         return view('ciclism.first');
     });*/
 
+
+    //Ruta afisare produs la partea de fotabl si ciclism
     Route::get('/ciclism', 'ProduseController@showProdusCiclism');
     Route::get('/football', 'ProduseController@showProdusFotbal');
 
+    //Ruta afisare mesaj adaugare cu succes produs/categorie
     Route::get('/add_message_prod', function (){
         return view('entities.add.addmessage_prod');
     });
-
     Route::get('/add_message_cat', function (){
         return view('entities.add.addmessage_cat');
     });
 
+    //Ruta Login si Register
     Route::get('/login', function (){
         return view('auth.login');
     });
@@ -49,6 +52,7 @@ Route::group(['middleware' => ['web']], function () {
 
     //Route::get('/edit{id}', 'ProduseController@editProdus');
 
+    //Ruta adaugare categorie si produs cu tot cu upload poza
     Route::post('/addprodus','ProduseController@newProdus');
     Route::get('/addprodus', 'ProduseController@add');
     Route::post('/upload', 'ProduseController@upload');
