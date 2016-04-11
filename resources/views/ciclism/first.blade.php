@@ -154,7 +154,20 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">{{ $produ->nume }}</div>
                     <div class="panel-body"><img src="{{ $produ->poza }}" class="img-responsive" style="width:100%" alt="Image"></div>
-                    <div class="panel-footer">{{ $produ->pret }} RON</div>
+                    <div class="panel-footer">{{ $produ->pret }} RON
+                        <div class="pull-right" style="margin-top:-7px">
+                            @if(!Auth::guest())
+                                @if(Auth::user()->tip=='ADMIN')
+                                    <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon-edit">Edit</span></a>
+                                    <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-remove">Delete</span></a>
+                                @endif
+                            @else
+                                <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon"></span>Detalii</a>
+                                <a href="#" class="btn btn-success"><span class="glyphicon glyphicon"></span>Cumpara</a>
+                            @endif
+                        </div>
+
+                    </div>
 
             </div></div>
 
