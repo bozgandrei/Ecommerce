@@ -95,7 +95,7 @@ class ProduseController extends Controller
     }*/
 
     //Incarcare modal Detalii produs
-    public function loadJsModalForm() {
+    public function detaliiProdus() {
         return View::make('ciclism.modalDetaliiProdus');
     }
 

@@ -63,6 +63,13 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::post('/addcategori','CategorieController@newCategorie');
 
+    //Route::get('/detaliiProdus', 'ProduseController@detaliiProdus');
+
+    //Test Modal
+    Route::get('detalii', function() {
+        return view('ciclism.modalDetaliiProdus');
+    });
+
 });
 
 
