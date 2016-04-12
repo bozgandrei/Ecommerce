@@ -72,6 +72,7 @@ Route::group(['middleware' => ['web']], function () {
     });
     Route::get('/editprodus/{id}', 'ProduseController@getEditProdus');
     Route::post('/editprodus', 'ProduseController@postEditProdus');
+    Route::get('/pdf','PDFController@generatePDF');
 
 });
 

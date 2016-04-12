@@ -16,7 +16,7 @@
                         <div class="col-md-6">
                         <select class="form-control" id="sel1" name="id_categorie">
                             @foreach($categorie as $categori)
-                                <option value="{{$categori->id_categorie}}">{{$categori->nume}}</option>
+                                <option value="{{$categori->id_categorie}}" {{($categori->id_categorie == $idcategorie) ? 'selected="selected"' : ''}}>{{$categori->nume}}</option>
                             @endforeach
                         </select>
                         </div>

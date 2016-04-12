@@ -81,7 +81,7 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+                    <li><a href='pdf'><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>

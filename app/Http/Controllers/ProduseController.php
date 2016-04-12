@@ -113,7 +113,8 @@ class ProduseController extends Controller
         $stoc = $produs->stoc;
         $descriere = $produs->descriere;
         $categorie = DB::table('categori')->get();
-        return view('modale.modalEditProdus',['id'=>$id,'nume' => $nume, 'pret' => $pret ,'stoc'=>$stoc, 'descriere' => $descriere,'categorie'=>$categorie]);
+        $idcategorie = $produs->id_categorie;
+        return view('modale.modalEditProdus',['id'=>$id,'nume' => $nume, 'pret' => $pret ,'stoc'=>$stoc, 'descriere' => $descriere,'categorie'=>$categorie,'idcategorie'=>$idcategorie]);
     }
 
     public function postEditProdus()
