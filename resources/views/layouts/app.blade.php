@@ -76,23 +76,6 @@
                     <li><a href='addprodus'>Add Product</a></li>
                         @endif
                     @endif
-
-                    {{--@if(!Auth::guest())
-                        @if(Auth::user()->tip=='ADMIN')
-                            <li class="dropdown">
-                                <a class="dropdown-toggle"
-                                   data-toggle="dropdown"
-                                   href="#">
-                                    Add
-                                    <b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href='addprodus'>Add Product</a></li>
-                                    <li><a href='addcategori'>Add Category</a></li>
-                                </ul>
-                            </li>
-                             @endif
-                        @endif--}}
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -124,7 +107,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
-
+<script src="{{ url('js/app.js') }}"></script>
+<script>
+    GLOBAL = {
+        base_url: "{{ url('/') }}"
+    };
+</script>
 
 </body>
 </html>

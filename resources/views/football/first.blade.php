@@ -3,6 +3,7 @@
     <head>
         <title>Football</title>
     </head>
+    {!! csrf_field() !!}
     <br>
     <br>
     <div class="container">
@@ -128,82 +129,22 @@
                             <div class="pull-right" style="margin-top:-7px">
                                 @if(!Auth::guest())
                                     @if(Auth::user()->tip=='ADMIN')
-                                        <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon-edit">Edit</span></a>
-                                        <a href="#" class="btn btn-danger"><span class="glyphicon glyphicon-remove">Delete</span></a>
-                                    @endif
+                                        <a href="#" class="btn btn-primary editProdus"><span class="glyphicon glyphicon-edit editProdus" data-id="{{$produ->id_produs}}">Edit</span></a>
+                                        <a href="{{url('deleteproduct/'.$produ->id_produs)}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove">Delete</span></a>
                                 @else
-                                    <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon"></span>Detalii</a>
                                     <a href="#" class="btn btn-success"><span class="glyphicon glyphicon"></span>Cumpara</a>
+                                    <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon"></span>Detalii</a>
+                                    @endif
+                                @else     <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon"></span>Detalii</a>
                                 @endif
                             </div>
                         </div>
 
                     </div></div>@endforeach</div>
-    {{--<div class="container">--}}
-        {{--<div class="row"><a href='#'>--}}
-                {{--<div class="col-sm-4">--}}
-                    {{--<div class="panel panel-primary">--}}
-                        {{--<div class="panel-heading">Game kit</div>--}}
-                        {{--<div class="panel-body"><img--}}
-                                    {{--src="{{ asset('/img/football/echipament.jpg') }}"--}}
-                                    {{--class="img-responsive" style="width:100%" alt="Image" width="50" height="70"></div>--}}
-                        {{--<div class="panel-footer">-24%</div>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</a>--}}
-            {{--<div class="col-sm-4">--}}
-                {{--<div class="panel panel-primary">--}}
-                    {{--<div class="panel-heading">Training kit</div>--}}
-                    {{--<div class="panel-body"><img src="{{ asset('/img/football/antrenament.jpg') }}"--}}
-                                                 {{--class="img-responsive" style="width:100%" alt="Image" width="50"--}}
-                                                 {{--height="70"></div>--}}
-                    {{--<div class="panel-footer">-30%</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="col-sm-4">--}}
-                {{--<div class="panel panel-primary">--}}
-                    {{--<div class="panel-heading">Presentation kit</div>--}}
-                    {{--<div class="panel-body"><img src="{{ asset('/img/football/prezentare.jpg') }}"--}}
-                                                 {{--class="img-responsive" style="width:100%" alt="Image" width="50"--}}
-                                                 {{--height="70"></div>--}}
-                    {{--<div class="panel-footer">-10%</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div><br>--}}
-
-    {{--<div class="container">--}}
-        {{--<div class="row">--}}
-            {{--<div class="col-sm-4">--}}
-                {{--<div class="panel panel-primary">--}}
-                    {{--<div class="panel-heading">Referee kit</div>--}}
-                    {{--<div class="panel-body"><img src="{{ asset('/img/football/arbitru.jpg') }}"--}}
-                                                 {{--class="img-responsive" style="width:100%" alt="Image" width="50"--}}
-                                                 {{--height="70"></div>--}}
-                    {{--<div class="panel-footer">-15%</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="col-sm-4">--}}
-                {{--<div class="panel panel-primary">--}}
-                    {{--<div class="panel-heading">Accessories and balls</div>--}}
-                    {{--<div class="panel-body"><img src="{{ asset('/img/football/mingi.jpg') }}"--}}
-                                                 {{--class="img-responsive" style="width:100%" alt="Image" width="50"--}}
-                                                 {{--height="70"></div>--}}
-                    {{--<div class="panel-footer">-20%</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="col-sm-4">--}}
-                {{--<div class="panel panel-primary">--}}
-                    {{--<div class="panel-heading">LifeStyle</div>--}}
-                    {{--<div class="panel-body"><img src="{{ asset('/img/football/lifestyle.jpg') }}"--}}
-                                                 {{--class="img-responsive" style="width:100%" alt="Image" width="50"--}}
-                                                 {{--height="70" s></div>--}}
-                    {{--<div class="panel-footer">-5%</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
     </div><br><br>
+    <div id="modalEditProdus" class="modal fade" role="dialog">
 
+    </div>
     <footer class="container-fluid text-center">
         <form class="form-inline">Get deals:
             <input type="email" class="form-control" size="50" placeholder="Email Address">
@@ -212,5 +153,4 @@
             <p>TehInt.Sports Copyright</p>
 
     </footer>
-
 @endsection

@@ -66,9 +66,12 @@ Route::group(['middleware' => ['web']], function () {
     //Route::get('/detaliiProdus', 'ProduseController@detaliiProdus');
 
     //Test Modal
+    Route::get('deleteproduct/{id}','ProduseController@deleteProdus');
     Route::get('detalii', function() {
         return view('ciclism.modalDetaliiProdus');
     });
+    Route::get('/editprodus/{id}', 'ProduseController@getEditProdus');
+    Route::post('/editprodus', 'ProduseController@postEditProdus');
 
 });
 

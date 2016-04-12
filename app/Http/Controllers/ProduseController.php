@@ -99,4 +99,44 @@ class ProduseController extends Controller
         return View::make('ciclism.modalDetaliiProdus');
     }
 
+    public function deleteProdus($id){
+        $produs=Produse::find($id);
+        $produs->delete();
+        return Redirect::back()->with("Sters cu succes");
+    }
+
+    public function getEditProdus($id)
+    {
+        $produs = Produse::find($id);
+        $nume = $produs->nume;
+        $pret = $produs->pret;
+        $stoc = $produs->stoc;
+        $descriere = $produs->descriere;
+        $categorie = DB::table('categori')->get();
+        return view('modale.modalEditProdus',['id'=>$id,'nume' => $nume, 'pret' => $pret ,'stoc'=>$stoc, 'descriere' => $descriere,'categorie'=>$categorie]);
+    }
+
+    public function postEditProdus()
+    {
+
+        $nume= Input::get('nume');
+        $pret = Input::get('pret');
+        $id_categorie= Input::get('id_categorie');
+        $stoc = Input::get('stoc');
+        $descriere = Input::get('descriere');
+        $id=Input::get('id');
+
+
+        $produs = Produse::find($id);
+        $produs->nume= $nume;
+        $produs->pret = $pret;
+        $produs->id_categorie= $id_categorie;
+        $produs->stoc = $stoc;
+        $produs->descriere = $descriere;
+        $produs->save();
+
+        return Redirect::back();
+    }
+
+
 }
