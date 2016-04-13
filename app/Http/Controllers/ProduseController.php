@@ -95,16 +95,50 @@ class ProduseController extends Controller
     }*/
 
     //Incarcare modal Detalii produs
-    public function detaliiProdus() {
-        return View::make('ciclism.modalDetaliiProdus');
+    public function getDetaliiProdus($id)
+    {
+        $produs = Produse::find($id);
+        $nume = $produs->nume;
+        $pret = $produs->pret;
+        $stoc = $produs->stoc;
+        $poza = $produs->poza;
+        $descriere = $produs->descriere;
+        $categorie = DB::table('categori')->get();
+        $idcategorie = $produs->id_categorie;
+        return view('modale.modalDetaliiProdus',['id'=>$id,'nume' => $nume, 'pret' => $pret ,'stoc'=>$stoc, 'poza'=>$poza, 'descriere' => $descriere,'categorie'=>$categorie,'idcategorie'=>$idcategorie]);
     }
 
+    public function postDetaliiProdus()
+    {
+
+        $nume= Input::get('nume');
+        $pret = Input::get('pret');
+        $id_categorie= Input::get('id_categorie');
+        $stoc = Input::get('stoc');
+        $poza = Input::get('poza');
+        $descriere = Input::get('descriere');
+        $id=Input::get('id');
+
+
+        $produs = Produse::find($id);
+        $produs->nume= $nume;
+        $produs->pret = $pret;
+        $produs->id_categorie= $id_categorie;
+        $produs->stoc = $stoc;
+        $produs->poza = $poza;
+        $produs->descriere = $descriere;
+
+        return Redirect::back();
+    }
+
+    //Stergere produs
     public function deleteProdus($id){
         $produs=Produse::find($id);
         $produs->delete();
         return Redirect::back()->with("Sters cu succes");
     }
 
+    //modal editare produs
     public function getEditProdus($id)
     {
         $produs = Produse::find($id);

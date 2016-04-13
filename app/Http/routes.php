@@ -63,13 +63,13 @@ Route::group(['middleware' => ['web']], function () {
 
     Route::post('/addcategori','CategorieController@newCategorie');
 
-    //Route::get('/detaliiProdus', 'ProduseController@detaliiProdus');
+    //modal detalii produs
+    Route::get('/detaliiprodus/{id}', 'ProduseController@getDetaliiProdus');
+    Route::post('/detaliiprodus', 'ProduseController@postDetaliiProdus');
 
     //Test Modal
     Route::get('deleteproduct/{id}','ProduseController@deleteProdus');
-    Route::get('detalii', function() {
-        return view('ciclism.modalDetaliiProdus');
-    });
+
     Route::get('/editprodus/{id}', 'ProduseController@getEditProdus');
     Route::post('/editprodus', 'ProduseController@postEditProdus');
     Route::get('/pdf','PDFController@generatePDF');
