@@ -139,6 +139,7 @@
                                     <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon"></span>Detalii</a>
                                 @endif
                             @else     <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon"></span>Detalii</a>
+                                       <a href='login' class="btn btn-success"><span class="glyphicon glyphicon"></span>Cumpara</a>
                             @endif
                         </div>
 

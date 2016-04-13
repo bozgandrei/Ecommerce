@@ -77,37 +77,21 @@
                     @endif
                 @endif
 
-                {{--@if(!Auth::guest())
-                    @if(Auth::user()->tip=='ADMIN')
-                        <li class="dropdown">
-                            <a class="dropdown-toggle"
-                               data-toggle="dropdown"
-                               href="#">
-                                Add
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href='addprodus'>Add Product</a></li>
-                                <li><a href='addcategori'>Add Category</a></li>
-                            </ul>
-                        </li>
-                    @endif
-                @endif--}}
             </ul>
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 <!-- Authentication Links -->
-                <li><a href='pdf'><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+
                 @if (Auth::guest())
                     <li><a href="{{ url('/login') }}">Login</a></li>
                     <li><a href="{{ url('/register') }}">Register</a></li>
                 @else
-                    <li class="dropdown">
+
+                    <li><a href='pdf'><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
 
 
-
-                        <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout ({{ Auth::user()->name }})</a></li>
+                     <li>   <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout ({{ Auth::user()->name }})</a></li>
 
 
                 @endif

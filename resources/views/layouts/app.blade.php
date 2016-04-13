@@ -81,19 +81,20 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
-                    <li><a href='pdf'><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
+
                     @if (Auth::guest())
+
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else
-                        <li class="dropdown">
+
+                        <li><a href='pdf'><span class="glyphicon glyphicon-shopping-cart"></span>Cart</a></li>
 
 
 
 
 
-
-                                <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout ({{ Auth::user()->name }})</a></li>
+                               <li> <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout ({{ Auth::user()->name }})</a></li>
                     @endif
 
 
