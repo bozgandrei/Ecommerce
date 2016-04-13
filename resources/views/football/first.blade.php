@@ -131,21 +131,24 @@
                                     @if(Auth::user()->tip=='ADMIN')
                                         <a href="#" class="btn btn-primary editProdus"><span class="glyphicon glyphicon-edit editProdus" data-id="{{$produ->id_produs}}">Edit</span></a>
                                         <a href="{{url('deleteproduct/'.$produ->id_produs)}}" class="btn btn-danger"><span class="glyphicon glyphicon-remove">Delete</span></a>
-                                @else
-                                    <a href="#" class="btn btn-success"><span class="glyphicon glyphicon"></span>Cumpara</a>
-                                    <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon"></span>Detalii</a>
+                                        {!! csrf_field() !!}
+                                    @else
+                                        <a href="#" class="btn btn-success"><span class="glyphicon glyphicon"></span>Cumpara</a>
+                                        <a href="#" class="btn btn-primary detaliiProdus"><span class="glyphicon glyphicon-edit detaliiProdus" data-id="{{$produ->id_produs}}">Detalii</span></a>
                                     @endif
-                                @else     <a href="#" class="btn btn-primary"><span class="glyphicon glyphicon"></span>Detalii</a>
-                                          <a href='login' class="btn btn-success"><span class="glyphicon glyphicon"></span>Cumpara</a>
+                                @else
+                                    <a href="#" class="btn btn-primary detaliiProdus"><span class="glyphicon glyphicon-edit detaliiProdus" data-id="{{$produ->id_produs}}">Detalii</span></a>
+                                <a href='login' class="btn btn-success"><span class="glyphicon glyphicon"></span>Cumpara</a>
                                 @endif
                             </div>
                         </div>
 
                     </div></div>@endforeach</div>
     </div><br><br>
-    <div id="modalEditProdus" class="modal fade" role="dialog">
+    <div id="modalEditProdus" class="modal fade" role="dialog"></div>
+    <div id="modalDetaliiProdus" class="modal fade" role="dialog"></div>
 
-    </div>
+
     <footer class="container-fluid text-center">
         <form class="form-inline">Get deals:
             <input type="email" class="form-control" size="50" placeholder="Email Address">
