@@ -105,7 +105,8 @@ class ProduseController extends Controller
         $descriere = $produs->descriere;
         $categorie = DB::table('categori')->get();
         $idcategorie = $produs->id_categorie;
-        return view('modale.modalDetaliiProdus',['id'=>$id,'nume' => $nume, 'pret' => $pret ,'stoc'=>$stoc, 'poza'=>$poza, 'descriere' => $descriere,'categorie'=>$categorie,'idcategorie'=>$idcategorie]);
+        //$cat = DB::table('categori')->get($idcategorie);
+        return view('modale.modalDetaliiProdus',['id'=>$id,'nume' => $nume, 'pret' => $pret ,'stoc'=>$stoc, 'poza'=>$poza, 'descriere' => $descriere,'categorie'=>$categorie,'idcategorie'=>$idcategorie/*, 'cat'=>$cat*/]);
     }
 
     public function postDetaliiProdus()

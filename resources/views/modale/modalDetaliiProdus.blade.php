@@ -37,7 +37,10 @@
                                     <option value="{{$categori->id_categorie}}" {{($categori->id_categorie == $idcategorie) ? 'selected="selected"' : ''}}>{{$categori->nume}}</option>
                                 @endforeach
                             </select>
-                            {{--<div class="form-control">{{$categori->nume}}</div>--}}
+                            {{--n-a iesit--}}
+                            {{--<div class="form-control" name="cat">
+                                {{$categori->nume}}
+                            </div>--}}
                         </div>
                     </div>
                 </div>
@@ -77,7 +80,7 @@
 
                     <div class="col-md-6">
                         {{--<input type="text" class="form-control" name="poza" value="{{$poza}}">--}}
-                       <img src="{{ $poza }}"/>
+                       <img src="{{ $poza }}" style="width: 350px; height: 350px;"/>
                         {{--<div class="form-control"><img src="{{ $poza }}"/></div>--}}
 
                         @if ($errors->has('poza'))
@@ -93,10 +96,11 @@
 
                     <div class="col-md-6">
                         {{--<input type="text" class="form-control" name="descriere" value="{{$descriere}}">--}}
-                        <div class="form-control">{{ $descriere }}</div>
-                        {{--<div class="form-group">
-                            <textarea class="form-control" placeholder="{{ $descriere }}"></textarea>
-                        </div>--}}
+                        {{--<div class="form-control">{{ $descriere }}</div>--}}
+                        <textarea class="form-control" readonly style="width: 300px; height: 300px;">
+                            {{ $descriere }}
+                        </textarea>
+
 
 
                         @if ($errors->has('descriere'))
