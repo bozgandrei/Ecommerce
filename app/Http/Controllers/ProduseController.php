@@ -146,19 +146,27 @@ class ProduseController extends Controller
         $nume = $produs->nume;
         $pret = $produs->pret;
         $stoc = $produs->stoc;
+        $poza = $produs->poza;
         $descriere = $produs->descriere;
         $categorie = DB::table('categori')->get();
         $idcategorie = $produs->id_categorie;
-        return view('modale.modalEditProdus',['id'=>$id,'nume' => $nume, 'pret' => $pret ,'stoc'=>$stoc, 'descriere' => $descriere,'categorie'=>$categorie,'idcategorie'=>$idcategorie]);
+        return view('modale.modalEditProdus',['id'=>$id,'nume' => $nume, 'pret' => $pret ,'stoc'=>$stoc, 'poza'=>$poza, 'descriere' => $descriere,'categorie'=>$categorie,'idcategorie'=>$idcategorie]);
     }
 
     public function postEditProdus()
     {
+        $file = Input::file('file');
+        $path = "";
+        if(isset($file)) {
+            $file -> move('imaginiUpload', $file->getClientOriginalName());
+            $path='http://localhost:8000/imaginiUpload/' . $file->getClientOriginalName();
+        }
 
         $nume= Input::get('nume');
         $pret = Input::get('pret');
         $id_categorie= Input::get('id_categorie');
         $stoc = Input::get('stoc');
+        $poza = Input::get('poza');
         $descriere = Input::get('descriere');
         $id=Input::get('id');
 
@@ -168,6 +176,12 @@ class ProduseController extends Controller
         $produs->pret = $pret;
         $produs->id_categorie= $id_categorie;
         $produs->stoc = $stoc;
+        $produs->poza = $path;
+        if ( isset($file)) {
+            $produs->poza = $path;
+        }else{
+            $produs->poza = $poza;
+        }
         $produs->descriere = $descriere;
         $produs->save();
 

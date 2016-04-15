@@ -6,7 +6,7 @@
 
     tinymce.init({
         selector: 'textarea',
-        width: 500,
+        width: 470,
         height: 250,
         plugins: [
             'advlist autolink lists link image charmap print preview anchor',
@@ -25,7 +25,7 @@
 
 
 <!-- Modal -->
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/editprodus') }}">
+<form class="form-horizontal" role="form" method="POST" action="{{ url('/editprodus') }}" enctype="multipart/form-data">
     {!! csrf_field() !!}
     <div class="modal-dialog">
         <!-- Modal content-->
@@ -93,12 +93,39 @@
                     </div>
                 </div>
 
+                <div class="form-group{{ $errors->has('poza') ? ' has-error' : '' }}">
+                    <label class="col-md-4 control-label">Poza</label>
+
+                    <div class="col-md-6">
+                        {{--<input type="text" class="form-control" name="poza" value="{{$poza}}">--}}
+                        <input type="text" class="form-control" name="poza" value="{{$poza}}"><br/>
+                        <img src="{{ $poza }}" style="width: 100%;border-radius: 7px;"/>
+
+                        @if ($errors->has('poza'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('poza') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+                <div role="form">
+                    <div class="form-group">
+                        <label for="sel1" class="col-md-4 control-label">Select image to upload:</label>
+                        <div class="col-lg-6">
+
+                            <input class="form-control" type="file" name="file" id="file">
+                            <input type="hidden" value="{{ csrf_token() }}" name="_token">
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="form-group{{ $errors->has('descriere') ? ' has-error' : '' }}">
                     <label class="col-md-4 control-label">Descriere</label>
 
                     <div class="col-md-6">
                         {{--<input type="text" class="form-control" name="descriere" value="{{$descriere}}">--}}
-                        <textarea name="descriere" class="form-control" style="width: 280px; height: 150px;">
+                        <textarea name="descriere" class="form-control">
                             {{$descriere}}
                         </textarea>
 

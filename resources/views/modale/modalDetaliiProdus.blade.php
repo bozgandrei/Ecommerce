@@ -6,7 +6,7 @@
 
     tinymce.init({
         selector: 'textarea',
-        width: 600,
+        width: 470,
         height: 250,
         resize: 'both',
         menubar: false,
@@ -102,7 +102,7 @@
 
                     <div class="col-md-6">
                         {{--<input type="text" class="form-control" name="poza" value="{{$poza}}">--}}
-                       <img src="{{ $poza }}" style="width: 600px; height: 600px;"/>
+                       <img src="{{ $poza }}" style="width: 100%;border-radius: 7px;"/>
                         {{--<div class="form-control"><img src="{{ $poza }}"/></div>--}}
 
                         @if ($errors->has('poza'))
