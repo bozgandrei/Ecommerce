@@ -16,6 +16,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     <script src="{{URL::asset('js/gen_validatorv4.js')}}" type="text/javascript"></script>
+    <script src="{{ URL::asset('js/tinymce/tinymce.min.js') }}" type="text/javascript"></script>
     {{--}}<!-- Javascripts & Jquey -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
             type="text/javascript"></script>

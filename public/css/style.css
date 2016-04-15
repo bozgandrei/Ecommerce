@@ -164,3 +164,12 @@ footer {
     background-color: #f2f2f2;
     padding: 25px;
 }
+
+.modal-dialog {
+    width: 1000px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}

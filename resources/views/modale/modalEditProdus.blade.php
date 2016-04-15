@@ -1,3 +1,29 @@
+<link rel="stylesheet" href="{{URL::asset('css/style.css')}}">
+
+<script src="{{ URL::asset('js/tinymce/tinymce.min.js') }}" type="text/javascript"></script>
+<script type="text/javascript">
+    //optiuni formatare text area
+
+    tinymce.init({
+        selector: 'textarea',
+        width: 500,
+        height: 250,
+        plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table contextmenu paste code'
+        ],
+        statusbar: false,
+
+        toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+        content_css: [
+            '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+            '//www.tinymce.com/css/codepen.min.css'
+        ]
+    });
+</script>
+
+
 <!-- Modal -->
 <form class="form-horizontal" role="form" method="POST" action="{{ url('/editprodus') }}">
     {!! csrf_field() !!}
@@ -71,7 +97,10 @@
                     <label class="col-md-4 control-label">Descriere</label>
 
                     <div class="col-md-6">
-                        <input type="text" class="form-control" name="descriere" value="{{$descriere}}">
+                        {{--<input type="text" class="form-control" name="descriere" value="{{$descriere}}">--}}
+                        <textarea name="descriere" class="form-control" style="width: 280px; height: 150px;">
+                            {{$descriere}}
+                        </textarea>
 
                         @if ($errors->has('descriere'))
                             <span class="help-block">
@@ -90,3 +119,6 @@
 </div>
   </div>
 </form>
+
+
+

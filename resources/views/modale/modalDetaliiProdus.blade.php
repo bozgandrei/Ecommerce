@@ -1,3 +1,25 @@
+<link rel="stylesheet" href="{{URL::asset('css/style.css')}}">
+
+<script src="{{ URL::asset('js/tinymce/tinymce.min.js') }}" type="text/javascript"></script>
+<script type="text/javascript">
+    //optiuni formatare text area
+
+    tinymce.init({
+        selector: 'textarea',
+        width: 600,
+        height: 250,
+        resize: 'both',
+        menubar: false,
+        statusbar: false,
+        readonly : 1,
+
+        toolbar: false,
+        content_css: [
+            '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+            '//www.tinymce.com/css/codepen.min.css'
+        ]
+    });
+</script>
 <!-- Modal -->
 <form class="form-horizontal" role="form" method="POST" action="{{ url('/detaliiprodus') }}">
     {!! csrf_field() !!}
@@ -80,7 +102,7 @@
 
                     <div class="col-md-6">
                         {{--<input type="text" class="form-control" name="poza" value="{{$poza}}">--}}
-                       <img src="{{ $poza }}" style="width: 350px; height: 350px;"/>
+                       <img src="{{ $poza }}" style="width: 600px; height: 600px;"/>
                         {{--<div class="form-control"><img src="{{ $poza }}"/></div>--}}
 
                         @if ($errors->has('poza'))
@@ -97,11 +119,13 @@
                     <div class="col-md-6">
                         {{--<input type="text" class="form-control" name="descriere" value="{{$descriere}}">--}}
                         {{--<div class="form-control">{{ $descriere }}</div>--}}
-                        <textarea class="form-control" readonly style="width: 300px; height: 300px;">
+                        <textarea class="form-control" readonly style="width: 600px; height: 300px;">
                             {{ $descriere }}
                         </textarea>
 
-
+                        {{--<div contenteditable="true">
+                            {{ $descriere }}
+                        </div>--}}
 
                         @if ($errors->has('descriere'))
                             <span class="help-block">

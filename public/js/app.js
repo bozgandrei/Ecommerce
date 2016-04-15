@@ -52,9 +52,5 @@ $(document).ready(function(){
 
 
 
+ })
 
-
-
-
-
-    })
