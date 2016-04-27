@@ -21,7 +21,7 @@
     });
 </script>
 <!-- Modal -->
-<form class="form-horizontal" role="form" method="POST" action="{{ url('/detaliiprodus') }}">
+<form class="form-horizontal" role="form" method="get" action="{{ url('/detaliiprodus') }}">
     {!! csrf_field() !!}
     <div class="modal-dialog">
         <!-- Modal content-->
@@ -49,23 +49,18 @@
                         @endif
                     </div>
                 </div>
-
-                <div role="form">
-                    <div class="form-group">
+                <div class="form-group{{ $errors->has('nume') ? ' has-error' : '' }}">
                         <label for="sel1" class="col-md-4 control-label">Categorie:</label>
                         <div class="col-md-6">
-                            <select class="form-control" id="sel1" name="id_categorie">
-                               @foreach($categorie as $categori)
-                                    <option value="{{$categori->id_categorie}}" {{($categori->id_categorie == $idcategorie) ? 'selected="selected"' : ''}}>{{$categori->nume}}</option>
-                                @endforeach
-                            </select>
+                                    <div class="form-control">{{ $categorie[0]->nume }}</div>
+
                             {{--n-a iesit--}}
                             {{--<div class="form-control" name="cat">
                                 {{$categori->nume}}
                             </div>--}}
                         </div>
-                    </div>
-                </div>
+</div>
+
 
                 <div class="form-group{{ $errors->has('pret') ? ' has-error' : '' }}">
                     <label class="col-md-4 control-label">Pret:</label>
@@ -138,7 +133,7 @@
                 <input type="hidden" name="_token" value="{!! csrf_token() !!}">
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" data-dismiss="modal">Cumpara</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
