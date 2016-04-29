@@ -1,6 +1,29 @@
 @extends('layouts.app')
 
 @section('content')
+    <script src="{{ URL::asset('js/tinymce/tinymce.min.js') }}" type="text/javascript"></script>
+    <script type="text/javascript">
+        //optiuni formatare text area
+
+        tinymce.init({
+            selector: 'textarea',
+            width: 500,
+            height: 240,
+            plugins: [
+                'advlist autolink lists link image charmap print preview anchor',
+                'searchreplace visualblocks code fullscreen',
+                'insertdatetime media table contextmenu paste code'
+            ],
+            statusbar: false,
+
+            toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            content_css: [
+                '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+                '//www.tinymce.com/css/codepen.min.css'
+            ]
+        });
+    </script>
+
     <div class="container">
 
         <form method="post"  action="{{URL::to('addprodus')}}" id="AddProdus" enctype="multipart/form-data">
@@ -40,10 +63,12 @@
                                     </span>
                 @endif
             </div>
-            <div class="j4">
+
+            {{--<div class="j5">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon" id="time"><span class="label label-primary">Descriere</span></span>
-                    <input type="text" class="form-control" name="descriere" placeholder="Descriere" aria-describedby="time">
+
+                    <textarea name="descriere" class="form-control"></textarea>
                 </div>
                 @if ($errors->has('descriere'))
                     <span class="help-block" style="float: right">
@@ -51,14 +76,22 @@
                                     </span>
                 @endif
             </div>
-            {{--<div class="j5">
-                <div class="input-group input-group-lg">
-                    <span class="input-group-addon" id="min"><span class="label label-primary">Poza</span></span>
-                    <input type="text" class="form-control" name="poza" placeholder="Poza"
-                           aria-describedby="min">
-                </div>
-            </div>--}}
+--}}
             <div class="j5">
+                <div role="form">
+                    <div class="form-group">
+                        <label for="sel1">Descriere:</label>
+                        <textarea name="descriere" class="form-control"></textarea>
+                    </div>
+                </div>
+                @if ($errors->has('descriere'))
+                    <span class="help-block" style="float: right">
+                                        <strong>{{ $errors->first('descriere') }}</strong>
+                                    </span>
+                @endif
+            </div>
+
+            <div class="j4">
                 <div role="form">
                     <div class="form-group">
                         <label for="sel1">Select image to upload:</label>
